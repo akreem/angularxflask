@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    image: flaskimage
+    ports:
+      - 5001:5000
+    volumes:
+      - ./flaskapp:/app
+
+  frontend:
+    image: my-angular-app-image
+    ports:
+      - 8090:80
+    volumes:
+      - ./myapp/dist/myapp:/usr/share/nginx/html      
